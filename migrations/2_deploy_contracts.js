@@ -1,6 +1,6 @@
 var Ownable = artifacts.require("./common/Ownable.sol");
 var Killable = artifacts.require("./common/Killable.sol");
-var Killable = artifacts.require("./Factory.sol");
+var Factory = artifacts.require("./Factory.sol");
 
 module.exports = function(deployer) {
   deployer.deploy(Ownable);
