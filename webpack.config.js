@@ -1,17 +1,25 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require("webpack");
 
 module.exports = {
-  entry: './app/javascripts/app.js',
+  entry: {
+    'app':'./app/javascripts/app.js'
+  },
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'app.js'
+    filename: '[name].js'
   },
   plugins: [
     // Copy our app's index.html to the build folder.
     new CopyWebpackPlugin([
-      { from: './app/index.html', to: "index.html" }
-    ])
+      { from: './app/index.html', to: "index.html" },
+      { from: './app/admin.html', to: "admin.html" }
+    ]),
+    new webpack.optimize.UglifyJsPlugin({
+      include: /\.min\.js$/,
+      minimize: true
+    })
   ],
   module: {
     rules: [
