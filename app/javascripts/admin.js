@@ -41,15 +41,53 @@ export function shardData() {
 
 export function addLocatorLocations() {
     var instance = createContractInstance();
-    var address = document.getElementById('contractaddress').value;
+    var address = document.getElementById('contractaddresslist').value;
     var addressList = address.split(',');
+    var estimatedGas = 3000000;
 
-    instance.addLocations(addressList, function(error, result) {
+    var txnObject = {
+        from: web3.eth.coinbase,
+        gas: estimatedGas
+    }
+
+    instance.addLocations.sendTransaction(addressList, txnObject, function(error, result) {
         if(!error) {
             console.warn("Success");
         }
         else {
             console.log("Error");
+        }
+    });
+}
+
+export function getLocationsCount() {
+    var instance = createContractInstance();
+
+    instance.getLocationsCount.call(function(error,result) {
+        if(!error) {
+            console.log(result);
+        }
+        else {
+            console.log('Error');
+        }
+    });
+}
+
+export function sendEther() {
+    var address = document.getElementById('contractaddress').value;
+
+    var txnObject = {
+        from: web3.eth.coinbase,
+        to: address,
+        value: web3.toWei(5,'ether')
+    }
+
+    web3.eth.sendTransaction(txnObject, function(error, result) {
+        if(!error) {
+            console.warn('Success');
+        }
+        else {
+            console.log('Error');
         }
     });
 }

@@ -95,6 +95,11 @@ contract Factory is Killable {
             }
         }
     }
+
+    //Fallback function for loading with ether
+    function() public payable {
+
+    }
 }
 
 // contract ContentLocator {

@@ -11,7 +11,10 @@ contract ContentLocator {
     //     addLocations(locs);
     // }  
 
-    function addLocations(address[] locs) public returns(bool) {
+    function addLocations(address[] locs)
+    public 
+    payable
+    returns(bool) {
         //Copy the input ContentStores to the locations list
 
         for (uint i = 0; i < locs.length; i++) {
@@ -23,7 +26,10 @@ contract ContentLocator {
         return true;
     }
 
-    function shardContent(address user, bytes32 content) public returns (bool) {
+    function shardContent(address user, bytes32 content)
+    public
+    payable
+    returns (bool) {
         //Shard the content to multiple smart contracts
 
         bytes8[4] memory shards = [bytes8(0), 0, 0, 0];
@@ -44,6 +50,14 @@ contract ContentLocator {
         }
 
         return true;
+    }
+
+    function getLocationsCount() public view returns(uint) {
+        return locations.length;
+    }
+
+    function() public payable {
+
     }
 }
 

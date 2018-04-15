@@ -18,6 +18,12 @@ window.Admin = {
   },
   addLocatorLocations: function() {
     admin.addLocatorLocations();
+  },
+  getLocationsCount: function() {
+    admin.getLocationsCount();
+  },
+  sendEther: function() {
+    admin.sendEther();
   }
 };
 
