@@ -1,5 +1,7 @@
 pragma solidity ^0.4.2;
 
+import "./ContentStore.sol";
+
 contract ContentLocator {
     mapping(address => address[]) private locator;
 
@@ -9,7 +11,7 @@ contract ContentLocator {
     //     addLocations(locs);
     // }  
 
-    function addLocations(address[] locs) public {
+    function addLocations(address[] locs) public returns(bool) {
         //Copy the input ContentStores to the locations list
 
         for (uint i = 0; i < locs.length; i++) {
@@ -17,6 +19,8 @@ contract ContentLocator {
                 locations.push(locs[i]);
             }
         }
+
+        return true;
     }
 
     function shardContent(address user, bytes32 content) public returns (bool) {
@@ -43,7 +47,7 @@ contract ContentLocator {
     }
 }
 
-contract ContentStore {
-    function saveData(address user, bytes8 shard) public returns(bool);
-    function getData(address user) public view returns(bytes8);
-}
+// contract ContentStore {
+//     function saveData(address user, bytes8 shard) public returns(bool);
+//     function getData(address user) public view returns(bytes8);
+// }

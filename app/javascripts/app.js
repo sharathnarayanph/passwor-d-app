@@ -12,9 +12,12 @@ window.App = {
 };
 
 window.Admin = {
-  adminModule: function() {
+  deployContract: function() {
     //Base Code
-    admin.adminTest();
+    admin.deployContract();
+  },
+  addLocatorLocations: function() {
+    admin.addLocatorLocations();
   }
 };
 

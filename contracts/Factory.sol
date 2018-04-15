@@ -1,15 +1,18 @@
 pragma solidity ^0.4.2;
 
 import "./common/Killable.sol";
+import "./ContentLocator.sol";
 
 contract Factory is Killable {
     struct User {
         bytes32 name;
         bytes32 email;
         bytes32 password;
+        address location;
     }
 
     mapping (address => User) private users;
+    address[] private locations;
 
     modifier validCreds(bytes32 name, bytes32 email, bytes32 password) {
         // Must be valid credentials
@@ -39,6 +42,9 @@ contract Factory is Killable {
         users[msg.sender].name = name;
         users[msg.sender].password = password;
         users[msg.sender].email = email;
+
+        //Pick a random location for managing this user
+        users[msg.sender].location = locations[0];
 
         return (users[msg.sender].name);        
     }
@@ -70,4 +76,27 @@ contract Factory is Killable {
 
         return (users[msg.sender].name);
     }
+
+    function savePassword(bytes32 password) 
+    public
+    onlyExistingUser 
+    returns (bool) {
+        ContentLocator locator = ContentLocator(users[msg.sender].location);
+        locator.shardContent(msg.sender, password);
+        return true;
+    }
+
+    function addLocations(address[] locs) public {
+        //Copy the input ContentStores to the locations list
+
+        for (uint i = 0; i < locs.length; i++) {
+            if(locs[i]!=address(0)) {
+                locations.push(locs[i]);
+            }
+        }
+    }
 }
+
+// contract ContentLocator {
+//     function shardContent(address user, bytes32 content) public returns (bool);
+// }

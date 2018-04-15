@@ -1,10 +1,7 @@
 //import { default as web3} from 'web3';
 //import { default as contract } from 'truffle-contract';
 
-var abiFactory;
-var addr;
-
-export function createContractInstance() {
+export function createContractInstance(abiFactory, addr) {
     var abi = JSON.parse(abiFactory);
     
     var contract = web3.eth.contract(abi);
