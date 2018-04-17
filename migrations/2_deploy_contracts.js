@@ -10,6 +10,7 @@ module.exports = function(deployer) {
   deployer.deploy(Killable);
   deployer.link(Killable, Factory);
   deployer.deploy(Factory);
-  deployer.deploy(ContentLocator);
   deployer.deploy(ContentStore);
+  deployer.link(ContentStore, ContentLocator);
+  deployer.deploy(ContentLocator);
 };

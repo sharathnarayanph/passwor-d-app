@@ -24,6 +24,12 @@ window.Admin = {
   },
   sendEther: function() {
     admin.sendEther();
+  },
+  shardData: function() {
+    admin.shardData();
+  },
+  testFunction: function() {
+    console.log(web3.toAscii('0x50617373776f7264000000000000000000000000000000000000000000000000'));
   }
 };
 

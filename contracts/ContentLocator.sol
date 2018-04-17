@@ -7,10 +7,6 @@ contract ContentLocator {
 
     address[] private locations;
 
-    // function ContentLocator(address[] locs) public {
-    //     addLocations(locs);
-    // }  
-
     function addLocations(address[] locs)
     public 
     payable
@@ -51,6 +47,7 @@ contract ContentLocator {
 
         return true;
     }
+
 
     function getLocationsCount() public view returns(uint) {
         return locations.length;

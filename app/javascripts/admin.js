@@ -1,13 +1,4 @@
-// import { default as web3} from 'web3';
-// import { default as contract } from 'truffle-contract';
 import * as helper from './helper.js';
-
-export function adminTest() {
-    //var contract = helper.createContractInstance();
-    //deployContract();
-    //deployContract();
-    addLocatorLocations();
-}
 
 export function deployContract() {
     var byteCode = document.getElementById('bytecode').value;
@@ -26,10 +17,22 @@ export function createContractInstance() {
 
 export function shardData() {
     var instance = createContractInstance();
-    var content;
+    var content = document.getElementById('contractaddress').value;
     var user = web3.eth.coinbase;
 
-    instance.shardContent(user, content, function(error, result) {
+    var events = instance.allEvents({fromBlock: 0, toBlock: 'latest'});
+
+    events.watch(function(error, result){
+        if(!error) {
+            console.warn(result);
+        }
+        else {
+            console.log('Error');
+        }
+     });
+
+
+    instance.shardContent.call(user, content, function(error, result) {
         if(!error) {
             console.warn(result);
         }    
@@ -37,6 +40,8 @@ export function shardData() {
             console.log(error);
         }
     });
+
+    events.stopWatching();
 }
 
 export function addLocatorLocations() {
