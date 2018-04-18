@@ -29,7 +29,14 @@ window.Admin = {
     admin.shardData();
   },
   testFunction: function() {
-    console.log(web3.toAscii('0x50617373776f7264000000000000000000000000000000000000000000000000'));
+    //console.log(web3.toAscii('0x50617373776f7264000000000000000000000000000000000000000000000000'));
+    admin.setPassword();
+  },
+  setLocatorTest: function() {
+    admin.setLocatorTest();
+  },
+  getStoreTest: function() {
+    admin.getStoreTest();
   }
 };
 

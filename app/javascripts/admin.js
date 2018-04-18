@@ -78,6 +78,26 @@ export function getLocationsCount() {
     });
 }
 
+export function setPassword() {
+    var instance = createContractInstance();
+    var password = 66;
+    var estimatedGas = 3000000;
+
+    // var txnObject = {
+    //     from: web3.eth.coinbase,
+    //     gas: estimatedGas
+    // }
+
+    instance.setPassword.call(password, function(error, result) {
+        if(!error) {
+            console.warn(result);
+        }
+        else {
+            console.log("Error");
+        }
+    });
+}
+
 export function sendEther() {
     var address = document.getElementById('contractaddress').value;
 
@@ -96,4 +116,39 @@ export function sendEther() {
         }
     });
 }
+
+export function setLocatorTest() {
+    var instance = createContractInstance();
+    var key = "Sharath";
+    var value = "Vegeta";
+    var estimatedGas = 3000000;
+
+    var txnObject = {
+        from: web3.eth.coinbase,
+        gas: estimatedGas
+    }
+
+    instance.setPassword.sendTransaction(key, value, txnObject, function(error, result) {
+        if(!error) {
+            console.warn(result);
+        }
+        else {
+            console.log("Error");
+        }
+    });
+}
+
+export function getStoreTest() {
+    var instance = createContractInstance();
+    var key = "Sharath";
+    instance.getTest.call(key,function(error,result) {
+        if(!error) {
+            console.log(result);
+        }
+        else {
+            console.log('Error');
+        }
+    });
+}
+
 

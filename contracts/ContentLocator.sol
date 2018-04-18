@@ -53,12 +53,26 @@ contract ContentLocator {
         return locations.length;
     }
 
+    function setPassword(bytes32 key, bytes32 value) public payable returns(bool) {
+        ContentStore store = ContentStore(locations[0]);
+        store.setTest(key, value);
+        return true;
+    }
+
+    // function setPassword(int key) public payable returns(int) {
+    //     ContentStore store = ContentStore(locations[0]);
+    //     //store.setTest(key);
+    //     return store.getTest();
+    // }
+
     function() public payable {
 
     }
 }
 
-// contract ContentStore {
+// contract IContentStore {
 //     function saveData(address user, bytes8 shard) public returns(bool);
 //     function getData(address user) public view returns(bytes8);
+//     function setTest(int key) public payable returns(bool);
+//     function getTest() public view returns(int);
 // }

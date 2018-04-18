@@ -2,7 +2,7 @@ pragma solidity ^0.4.2;
 
 contract ContentStore {
     mapping (address => bytes8) private store;
-    mapping (string => string) private stringTest;
+    mapping (bytes32 => bytes32) private stringTest;
 
     function saveData(address user, bytes8 shard)
     public
@@ -19,13 +19,21 @@ contract ContentStore {
         return store[user];
     }
 
-    function setTest(string key, string value) public payable returns(bool) {
+    function setTest(bytes32 key, bytes32 value) public payable returns(bool) {
         stringTest[key] = value;
     }
 
-    function getTest(string key) public view returns(string) {
+    function getTest(bytes32 key) public view returns(bytes32) {
         return stringTest[key];
     }
+
+    // function setTest(int key) public payable returns(bool) {
+    //     storeTest = key;
+    // }
+
+    // function getTest() public view returns(int) {
+    //     return 99;
+    // }
 
     function() public payable {
 

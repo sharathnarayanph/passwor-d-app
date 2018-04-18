@@ -61,22 +61,45 @@
       "payable": false,
       "stateMutability": "view",
       "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "key",
+          "type": "bytes32"
+        },
+        {
+          "name": "value",
+          "type": "bytes32"
+        }
+      ],
+      "name": "setPassword",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
     }
   ],
-  "bytecode": "0x6060604052341561000f57600080fd5b6106f98061001e6000396000f300606060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806324b8a12d146100595780633f068212146100ac578063629f945014610113575b005b610092600480803573ffffffffffffffffffffffffffffffffffffffff169060200190919080356000191690602001909190505061013c565b604051808215151515815260200191505060405180910390f35b6100f9600480803590602001908201803590602001908080602002602001604051908101604052809392919081815260200183836020028082843782019150505050505091905050610528565b604051808215151515815260200191505060405180910390f35b341561011e57600080fd5b610126610618565b6040518082815260200191505060405180910390f35b6000610146610625565b61014e610668565b600080608060405190810160405280600078010000000000000000000000000000000000000000000000000277ffffffffffffffffffffffffffffffffffffffffffffffff191677ffffffffffffffffffffffffffffffffffffffffffffffff19168152602001600078010000000000000000000000000000000000000000000000000277ffffffffffffffffffffffffffffffffffffffffffffffff19168152602001600078010000000000000000000000000000000000000000000000000277ffffffffffffffffffffffffffffffffffffffffffffffff19168152602001600078010000000000000000000000000000000000000000000000000277ffffffffffffffffffffffffffffffffffffffffffffffff1916815250935085845285600885015285601085015285601885015260008060008973ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008154811015156102cf57fe5b906000526020600020900160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161415151561031e57600080fd5b6000808873ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208054806020026020016040519081016040528092919081815260200182805480156103dc57602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019060010190808311610392575b50505050509250600091505b600482101561051a5782828151811015156103ff57fe5b9060200190602002015190508073ffffffffffffffffffffffffffffffffffffffff1663396a6bd888868560048110151561043657fe5b60200201516040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018277ffffffffffffffffffffffffffffffffffffffffffffffff191677ffffffffffffffffffffffffffffffffffffffffffffffff1916815260200192505050602060405180830381600087803b15156104f557600080fd5b5af1151561050257600080fd5b505050604051805190505081806001019250506103e8565b600194505050505092915050565b600080600090505b825181101561060e57600073ffffffffffffffffffffffffffffffffffffffff16838281518110151561055f57fe5b9060200190602002015173ffffffffffffffffffffffffffffffffffffffff16141515610601576001805480600101828161059a919061067c565b9160005260206000209001600085848151811015156105b557fe5b90602001906020020151909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505b8080600101915050610530565b6001915050919050565b6000600180549050905090565b6080604051908101604052806004905b600077ffffffffffffffffffffffffffffffffffffffffffffffff19168152602001906001900390816106355790505090565b602060405190810160405280600081525090565b8154818355818115116106a3578183600052602060002091820191016106a291906106a8565b5b505050565b6106ca91905b808211156106c65760008160009055506001016106ae565b5090565b905600a165627a7a7230582058097c9467dc1382efb8ab3639056c7fab3a018bed5fc11926b015997e29e3a50029",
-  "deployedBytecode": "0x606060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806324b8a12d146100595780633f068212146100ac578063629f945014610113575b005b610092600480803573ffffffffffffffffffffffffffffffffffffffff169060200190919080356000191690602001909190505061013c565b604051808215151515815260200191505060405180910390f35b6100f9600480803590602001908201803590602001908080602002602001604051908101604052809392919081815260200183836020028082843782019150505050505091905050610528565b604051808215151515815260200191505060405180910390f35b341561011e57600080fd5b610126610618565b6040518082815260200191505060405180910390f35b6000610146610625565b61014e610668565b600080608060405190810160405280600078010000000000000000000000000000000000000000000000000277ffffffffffffffffffffffffffffffffffffffffffffffff191677ffffffffffffffffffffffffffffffffffffffffffffffff19168152602001600078010000000000000000000000000000000000000000000000000277ffffffffffffffffffffffffffffffffffffffffffffffff19168152602001600078010000000000000000000000000000000000000000000000000277ffffffffffffffffffffffffffffffffffffffffffffffff19168152602001600078010000000000000000000000000000000000000000000000000277ffffffffffffffffffffffffffffffffffffffffffffffff1916815250935085845285600885015285601085015285601885015260008060008973ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008154811015156102cf57fe5b906000526020600020900160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161415151561031e57600080fd5b6000808873ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208054806020026020016040519081016040528092919081815260200182805480156103dc57602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019060010190808311610392575b50505050509250600091505b600482101561051a5782828151811015156103ff57fe5b9060200190602002015190508073ffffffffffffffffffffffffffffffffffffffff1663396a6bd888868560048110151561043657fe5b60200201516040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018277ffffffffffffffffffffffffffffffffffffffffffffffff191677ffffffffffffffffffffffffffffffffffffffffffffffff1916815260200192505050602060405180830381600087803b15156104f557600080fd5b5af1151561050257600080fd5b505050604051805190505081806001019250506103e8565b600194505050505092915050565b600080600090505b825181101561060e57600073ffffffffffffffffffffffffffffffffffffffff16838281518110151561055f57fe5b9060200190602002015173ffffffffffffffffffffffffffffffffffffffff16141515610601576001805480600101828161059a919061067c565b9160005260206000209001600085848151811015156105b557fe5b90602001906020020151909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505b8080600101915050610530565b6001915050919050565b6000600180549050905090565b6080604051908101604052806004905b600077ffffffffffffffffffffffffffffffffffffffffffffffff19168152602001906001900390816106355790505090565b602060405190810160405280600081525090565b8154818355818115116106a3578183600052602060002091820191016106a291906106a8565b5b505050565b6106ca91905b808211156106c65760008160009055506001016106ae565b5090565b905600a165627a7a7230582058097c9467dc1382efb8ab3639056c7fab3a018bed5fc11926b015997e29e3a50029",
-  "sourceMap": "55:1273:0:-;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "55:1273:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;500:684;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;171:323;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1191:95;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;500:684;589:4;662:23;;:::i;:::-;961:24;;:::i;:::-;1017:6;1055:18;662:46;;;;;;;;;696:1;689:9;;662:46;;;;;;;;;;700:1;662:46;;;;;;;;;703:1;662:46;;;;;;;;;706:1;662:46;;;;;;;;;;756:7;748:6;741:23;800:7;796:1;788:6;784:14;777:31;845:7;840:2;832:6;828:15;821:32;890:7;885:2;877:6;873:15;866:32;946:3;926:7;:13;934:4;926:13;;;;;;;;;;;;;;;940:1;926:16;;;;;;;;;;;;;;;;;;;;;;;;;;;;:23;;;;918:32;;;;;;;;988:7;:13;996:4;988:13;;;;;;;;;;;;;;;961:40;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1026:1;1017:10;;1012:144;1033:1;1029;:5;1012:144;;;1089:7;1097:1;1089:10;;;;;;;;;;;;;;;;;;1055:45;;1114:5;:14;;;1129:4;1135:6;1142:1;1135:9;;;;;;;;;;;;;1114:31;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1036:3;;;;;;;1012:144;;;1173:4;1166:11;;500:684;;;;;;;;:::o;171:323::-;245:4;328:6;337:1;328:10;;323:143;344:4;:11;340:1;:15;323:143;;;396:1;379:19;;:4;384:1;379:7;;;;;;;;;;;;;;;;;;:19;;;;376:80;;;418:9;:23;;;;;;;;;;;:::i;:::-;;;;;;;;;;433:4;438:1;433:7;;;;;;;;;;;;;;;;;;418:23;;;;;;;;;;;;;;;;;;;;;;;376:80;357:3;;;;;;;323:143;;;483:4;476:11;;171:323;;;;:::o;1191:95::-;1240:4;1263:9;:16;;;;1256:23;;1191:95;:::o;55:1273::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity ^0.4.2;\n\nimport \"./ContentStore.sol\";\n\ncontract ContentLocator {\n    mapping(address => address[]) private locator;\n\n    address[] private locations;\n\n    function addLocations(address[] locs)\n    public \n    payable\n    returns(bool) {\n        //Copy the input ContentStores to the locations list\n\n        for (uint i = 0; i < locs.length; i++) {\n            if(locs[i]!=address(0)) {\n                locations.push(locs[i]);\n            }\n        }\n\n        return true;\n    }\n\n    function shardContent(address user, bytes32 content)\n    public\n    payable\n    returns (bool) {\n        //Shard the content to multiple smart contracts\n\n        bytes8[4] memory shards = [bytes8(0), 0, 0, 0];\n        assembly {\n            mstore(shards, content)\n            mstore(add(shards, 8), content)\n            mstore(add(shards, 16), content)\n            mstore(add(shards, 24), content)\n        }\n\n        require(locator[user][0] != 0x0);\n\n        address[] memory targets = locator[user];\n\n        for (uint i = 0; i < 4; i++) {\n            ContentStore store = ContentStore(targets[i]);\n            store.saveData(user, shards[i]);\n        }\n\n        return true;\n    }\n\n\n    function getLocationsCount() public view returns(uint) {\n        return locations.length;\n    }\n\n    function() public payable {\n\n    }\n}\n\n// contract ContentStore {\n//     function saveData(address user, bytes8 shard) public returns(bool);\n//     function getData(address user) public view returns(bytes8);\n// }",
+  "bytecode": "0x6060604052341561000f57600080fd5b61082f8061001e6000396000f300606060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806324b8a12d146100645780633f068212146100b757806358fc3c3c1461011e578063629f94501461015f575b005b61009d600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803560001916906020019091905050610188565b604051808215151515815260200191505060405180910390f35b610104600480803590602001908201803590602001908080602002602001604051908101604052809392919081815260200183836020028082843782019150505050505091905050610574565b604051808215151515815260200191505060405180910390f35b61014560048080356000191690602001909190803560001916906020019091905050610664565b604051808215151515815260200191505060405180910390f35b341561016a57600080fd5b61017261074e565b6040518082815260200191505060405180910390f35b600061019261075b565b61019a61079e565b600080608060405190810160405280600078010000000000000000000000000000000000000000000000000277ffffffffffffffffffffffffffffffffffffffffffffffff191677ffffffffffffffffffffffffffffffffffffffffffffffff19168152602001600078010000000000000000000000000000000000000000000000000277ffffffffffffffffffffffffffffffffffffffffffffffff19168152602001600078010000000000000000000000000000000000000000000000000277ffffffffffffffffffffffffffffffffffffffffffffffff19168152602001600078010000000000000000000000000000000000000000000000000277ffffffffffffffffffffffffffffffffffffffffffffffff1916815250935085845285600885015285601085015285601885015260008060008973ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600081548110151561031b57fe5b906000526020600020900160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161415151561036a57600080fd5b6000808873ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002080548060200260200160405190810160405280929190818152602001828054801561042857602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190600101908083116103de575b50505050509250600091505b600482101561056657828281518110151561044b57fe5b9060200190602002015190508073ffffffffffffffffffffffffffffffffffffffff1663396a6bd888868560048110151561048257fe5b60200201516040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018277ffffffffffffffffffffffffffffffffffffffffffffffff191677ffffffffffffffffffffffffffffffffffffffffffffffff1916815260200192505050602060405180830381600087803b151561054157600080fd5b5af1151561054e57600080fd5b50505060405180519050508180600101925050610434565b600194505050505092915050565b600080600090505b825181101561065a57600073ffffffffffffffffffffffffffffffffffffffff1683828151811015156105ab57fe5b9060200190602002015173ffffffffffffffffffffffffffffffffffffffff1614151561064d57600180548060010182816105e691906107b2565b91600052602060002090016000858481518110151561060157fe5b90602001906020020151909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505b808060010191505061057c565b6001915050919050565b6000806001600081548110151561067757fe5b906000526020600020900160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1690508073ffffffffffffffffffffffffffffffffffffffff1663e66773bd85856040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808360001916600019168152602001826000191660001916815260200192505050602060405180830381600087803b151561072b57600080fd5b5af1151561073857600080fd5b5050506040518051905050600191505092915050565b6000600180549050905090565b6080604051908101604052806004905b600077ffffffffffffffffffffffffffffffffffffffffffffffff191681526020019060019003908161076b5790505090565b602060405190810160405280600081525090565b8154818355818115116107d9578183600052602060002091820191016107d891906107de565b5b505050565b61080091905b808211156107fc5760008160009055506001016107e4565b5090565b905600a165627a7a723058200d9d48ee285d67fc00e272543ae3c59dd1b9bdcd27221b26bb5925c04feeeb670029",
+  "deployedBytecode": "0x606060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806324b8a12d146100645780633f068212146100b757806358fc3c3c1461011e578063629f94501461015f575b005b61009d600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803560001916906020019091905050610188565b604051808215151515815260200191505060405180910390f35b610104600480803590602001908201803590602001908080602002602001604051908101604052809392919081815260200183836020028082843782019150505050505091905050610574565b604051808215151515815260200191505060405180910390f35b61014560048080356000191690602001909190803560001916906020019091905050610664565b604051808215151515815260200191505060405180910390f35b341561016a57600080fd5b61017261074e565b6040518082815260200191505060405180910390f35b600061019261075b565b61019a61079e565b600080608060405190810160405280600078010000000000000000000000000000000000000000000000000277ffffffffffffffffffffffffffffffffffffffffffffffff191677ffffffffffffffffffffffffffffffffffffffffffffffff19168152602001600078010000000000000000000000000000000000000000000000000277ffffffffffffffffffffffffffffffffffffffffffffffff19168152602001600078010000000000000000000000000000000000000000000000000277ffffffffffffffffffffffffffffffffffffffffffffffff19168152602001600078010000000000000000000000000000000000000000000000000277ffffffffffffffffffffffffffffffffffffffffffffffff1916815250935085845285600885015285601085015285601885015260008060008973ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600081548110151561031b57fe5b906000526020600020900160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161415151561036a57600080fd5b6000808873ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002080548060200260200160405190810160405280929190818152602001828054801561042857602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190600101908083116103de575b50505050509250600091505b600482101561056657828281518110151561044b57fe5b9060200190602002015190508073ffffffffffffffffffffffffffffffffffffffff1663396a6bd888868560048110151561048257fe5b60200201516040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018277ffffffffffffffffffffffffffffffffffffffffffffffff191677ffffffffffffffffffffffffffffffffffffffffffffffff1916815260200192505050602060405180830381600087803b151561054157600080fd5b5af1151561054e57600080fd5b50505060405180519050508180600101925050610434565b600194505050505092915050565b600080600090505b825181101561065a57600073ffffffffffffffffffffffffffffffffffffffff1683828151811015156105ab57fe5b9060200190602002015173ffffffffffffffffffffffffffffffffffffffff1614151561064d57600180548060010182816105e691906107b2565b91600052602060002090016000858481518110151561060157fe5b90602001906020020151909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505b808060010191505061057c565b6001915050919050565b6000806001600081548110151561067757fe5b906000526020600020900160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1690508073ffffffffffffffffffffffffffffffffffffffff1663e66773bd85856040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808360001916600019168152602001826000191660001916815260200192505050602060405180830381600087803b151561072b57600080fd5b5af1151561073857600080fd5b5050506040518051905050600191505092915050565b6000600180549050905090565b6080604051908101604052806004905b600077ffffffffffffffffffffffffffffffffffffffffffffffff191681526020019060019003908161076b5790505090565b602060405190810160405280600081525090565b8154818355818115116107d9578183600052602060002091820191016107d891906107de565b5b505050565b61080091905b808211156107fc5760008160009055506001016107e4565b5090565b905600a165627a7a723058200d9d48ee285d67fc00e272543ae3c59dd1b9bdcd27221b26bb5925c04feeeb670029",
+  "sourceMap": "55:1682:0:-;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "55:1682:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;500:684;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;171:323;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1292:198;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1191:95;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;500:684;589:4;662:23;;:::i;:::-;961:24;;:::i;:::-;1017:6;1055:18;662:46;;;;;;;;;696:1;689:9;;662:46;;;;;;;;;;700:1;662:46;;;;;;;;;703:1;662:46;;;;;;;;;706:1;662:46;;;;;;;;;;756:7;748:6;741:23;800:7;796:1;788:6;784:14;777:31;845:7;840:2;832:6;828:15;821:32;890:7;885:2;877:6;873:15;866:32;946:3;926:7;:13;934:4;926:13;;;;;;;;;;;;;;;940:1;926:16;;;;;;;;;;;;;;;;;;;;;;;;;;;;:23;;;;918:32;;;;;;;;988:7;:13;996:4;988:13;;;;;;;;;;;;;;;961:40;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1026:1;1017:10;;1012:144;1033:1;1029;:5;1012:144;;;1089:7;1097:1;1089:10;;;;;;;;;;;;;;;;;;1055:45;;1114:5;:14;;;1129:4;1135:6;1142:1;1135:9;;;;;;;;;;;;;1114:31;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1036:3;;;;;;;1012:144;;;1173:4;1166:11;;500:684;;;;;;;;:::o;171:323::-;245:4;328:6;337:1;328:10;;323:143;344:4;:11;340:1;:15;323:143;;;396:1;379:19;;:4;384:1;379:7;;;;;;;;;;;;;;;;;;:19;;;;376:80;;;418:9;:23;;;;;;;;;;;:::i;:::-;;;;;;;;;;433:4;438:1;433:7;;;;;;;;;;;;;;;;;;418:23;;;;;;;;;;;;;;;;;;;;;;;376:80;357:3;;;;;;;323:143;;;483:4;476:11;;171:323;;;;:::o;1292:198::-;1364:4;1380:18;1414:9;1424:1;1414:12;;;;;;;;;;;;;;;;;;;;;;;;;;;;1380:47;;1437:5;:13;;;1451:3;1456:5;1437:25;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1479:4;1472:11;;1292:198;;;;;:::o;1191:95::-;1240:4;1263:9;:16;;;;1256:23;;1191:95;:::o;55:1682::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.2;\n\nimport \"./ContentStore.sol\";\n\ncontract ContentLocator {\n    mapping(address => address[]) private locator;\n\n    address[] private locations;\n\n    function addLocations(address[] locs)\n    public \n    payable\n    returns(bool) {\n        //Copy the input ContentStores to the locations list\n\n        for (uint i = 0; i < locs.length; i++) {\n            if(locs[i]!=address(0)) {\n                locations.push(locs[i]);\n            }\n        }\n\n        return true;\n    }\n\n    function shardContent(address user, bytes32 content)\n    public\n    payable\n    returns (bool) {\n        //Shard the content to multiple smart contracts\n\n        bytes8[4] memory shards = [bytes8(0), 0, 0, 0];\n        assembly {\n            mstore(shards, content)\n            mstore(add(shards, 8), content)\n            mstore(add(shards, 16), content)\n            mstore(add(shards, 24), content)\n        }\n\n        require(locator[user][0] != 0x0);\n\n        address[] memory targets = locator[user];\n\n        for (uint i = 0; i < 4; i++) {\n            ContentStore store = ContentStore(targets[i]);\n            store.saveData(user, shards[i]);\n        }\n\n        return true;\n    }\n\n\n    function getLocationsCount() public view returns(uint) {\n        return locations.length;\n    }\n\n    function setPassword(bytes32 key, bytes32 value) public payable returns(bool) {\n        ContentStore store = ContentStore(locations[0]);\n        store.setTest(key, value);\n        return true;\n    }\n\n    // function setPassword(int key) public payable returns(int) {\n    //     ContentStore store = ContentStore(locations[0]);\n    //     //store.setTest(key);\n    //     return store.getTest();\n    // }\n\n    function() public payable {\n\n    }\n}\n\n// contract IContentStore {\n//     function saveData(address user, bytes8 shard) public returns(bool);\n//     function getData(address user) public view returns(bytes8);\n//     function setTest(int key) public payable returns(bool);\n//     function getTest() public view returns(int);\n// }",
   "sourcePath": "/home/sharath/Projectz/Blockchain/Passwor-D-app/contracts/ContentLocator.sol",
   "ast": {
     "absolutePath": "/home/sharath/Projectz/Blockchain/Passwor-D-app/contracts/ContentLocator.sol",
     "exportedSymbols": {
       "ContentLocator": [
-        138
+        165
       ]
     },
-    "id": 139,
+    "id": 166,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -95,8 +118,8 @@
         "file": "./ContentStore.sol",
         "id": 2,
         "nodeType": "ImportDirective",
-        "scope": 139,
-        "sourceUnit": 220,
+        "scope": 166,
+        "sourceUnit": 247,
         "src": "25:28:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -107,9 +130,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 138,
+        "id": 165,
         "linearizedBaseContracts": [
-          138
+          165
         ],
         "name": "ContentLocator",
         "nodeType": "ContractDefinition",
@@ -119,7 +142,7 @@
             "id": 7,
             "name": "locator",
             "nodeType": "VariableDeclaration",
-            "scope": 138,
+            "scope": 165,
             "src": "85:45:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -174,7 +197,7 @@
             "id": 10,
             "name": "locations",
             "nodeType": "VariableDeclaration",
-            "scope": 138,
+            "scope": 165,
             "src": "137:27:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -708,7 +731,7 @@
               ],
               "src": "244:6:0"
             },
-            "scope": 138,
+            "scope": 165,
             "src": "171:323:0",
             "stateMutability": "payable",
             "superFunction": null,
@@ -1115,7 +1138,7 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 646,
+                      "referencedDeclaration": 673,
                       "src": "918:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -1247,7 +1270,7 @@
                             "stateVariable": false,
                             "storageLocation": "default",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_ContentStore_$219",
+                              "typeIdentifier": "t_contract$_ContentStore_$246",
                               "typeString": "contract ContentStore"
                             },
                             "typeName": {
@@ -1255,10 +1278,10 @@
                               "id": 102,
                               "name": "ContentStore",
                               "nodeType": "UserDefinedTypeName",
-                              "referencedDeclaration": 219,
+                              "referencedDeclaration": 246,
                               "src": "1055:12:0",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_ContentStore_$219",
+                                "typeIdentifier": "t_contract$_ContentStore_$246",
                                 "typeString": "contract ContentStore"
                               }
                             },
@@ -1322,10 +1345,10 @@
                             "name": "ContentStore",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 219,
+                            "referencedDeclaration": 246,
                             "src": "1076:12:0",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_ContentStore_$219_$",
+                              "typeIdentifier": "t_type$_t_contract$_ContentStore_$246_$",
                               "typeString": "type(contract ContentStore)"
                             }
                           },
@@ -1339,7 +1362,7 @@
                           "nodeType": "FunctionCall",
                           "src": "1076:24:0",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_contract$_ContentStore_$219",
+                            "typeIdentifier": "t_contract$_ContentStore_$246",
                             "typeString": "contract ContentStore"
                           }
                         },
@@ -1424,7 +1447,7 @@
                               "referencedDeclaration": 103,
                               "src": "1114:5:0",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_ContentStore_$219",
+                                "typeIdentifier": "t_contract$_ContentStore_$246",
                                 "typeString": "contract ContentStore"
                               }
                             },
@@ -1435,7 +1458,7 @@
                             "lValueRequested": false,
                             "memberName": "saveData",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 166,
+                            "referencedDeclaration": 193,
                             "src": "1114:14:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_external_payable$_t_address_$_t_bytes8_$returns$_t_bool_$",
@@ -1731,7 +1754,7 @@
               ],
               "src": "588:6:0"
             },
-            "scope": 138,
+            "scope": 165,
             "src": "500:684:0",
             "stateMutability": "payable",
             "superFunction": null,
@@ -1828,7 +1851,7 @@
               ],
               "src": "1239:6:0"
             },
-            "scope": 138,
+            "scope": 165,
             "src": "1191:95:0",
             "stateMutability": "view",
             "superFunction": null,
@@ -1836,13 +1859,358 @@
           },
           {
             "body": {
-              "id": 136,
+              "id": 159,
               "nodeType": "Block",
-              "src": "1318:8:0",
+              "src": "1370:120:0",
+              "statements": [
+                {
+                  "assignments": [
+                    143
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 143,
+                      "name": "store",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 160,
+                      "src": "1380:18:0",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ContentStore_$246",
+                        "typeString": "contract ContentStore"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 142,
+                        "name": "ContentStore",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 246,
+                        "src": "1380:12:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ContentStore_$246",
+                          "typeString": "contract ContentStore"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 149,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 145,
+                          "name": "locations",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10,
+                          "src": "1414:9:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                            "typeString": "address[] storage ref"
+                          }
+                        },
+                        "id": 147,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 146,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "1424:1:0",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "1414:12:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 144,
+                      "name": "ContentStore",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 246,
+                      "src": "1401:12:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_ContentStore_$246_$",
+                        "typeString": "type(contract ContentStore)"
+                      }
+                    },
+                    "id": 148,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1401:26:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ContentStore_$246",
+                      "typeString": "contract ContentStore"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1380:47:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 153,
+                        "name": "key",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 135,
+                        "src": "1451:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 154,
+                        "name": "value",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 137,
+                        "src": "1456:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 150,
+                        "name": "store",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 143,
+                        "src": "1437:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ContentStore_$246",
+                          "typeString": "contract ContentStore"
+                        }
+                      },
+                      "id": 152,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "setTest",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 229,
+                      "src": "1437:13:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_payable$_t_bytes32_$_t_bytes32_$returns$_t_bool_$",
+                        "typeString": "function (bytes32,bytes32) payable external returns (bool)"
+                      }
+                    },
+                    "id": 155,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1437:25:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 156,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1437:25:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 157,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1479:4:0",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 141,
+                  "id": 158,
+                  "nodeType": "Return",
+                  "src": "1472:11:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 160,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "setPassword",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 138,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 135,
+                  "name": "key",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 160,
+                  "src": "1313:11:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 134,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1313:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 137,
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 160,
+                  "src": "1326:13:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 136,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1326:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1312:28:0"
+            },
+            "payable": true,
+            "returnParameters": {
+              "id": 141,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 140,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 160,
+                  "src": "1364:4:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 139,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1364:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1363:6:0"
+            },
+            "scope": 165,
+            "src": "1292:198:0",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 163,
+              "nodeType": "Block",
+              "src": "1727:8:0",
               "statements": []
             },
             "documentation": null,
-            "id": 137,
+            "id": 164,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -1850,39 +2218,39 @@
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 134,
+              "id": 161,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1300:2:0"
+              "src": "1709:2:0"
             },
             "payable": true,
             "returnParameters": {
-              "id": 135,
+              "id": 162,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1318:0:0"
+              "src": "1727:0:0"
             },
-            "scope": 138,
-            "src": "1292:34:0",
+            "scope": 165,
+            "src": "1701:34:0",
             "stateMutability": "payable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 139,
-        "src": "55:1273:0"
+        "scope": 166,
+        "src": "55:1682:0"
       }
     ],
-    "src": "0:1503:0"
+    "src": "0:2028:0"
   },
   "legacyAST": {
     "absolutePath": "/home/sharath/Projectz/Blockchain/Passwor-D-app/contracts/ContentLocator.sol",
     "exportedSymbols": {
       "ContentLocator": [
-        138
+        165
       ]
     },
-    "id": 139,
+    "id": 166,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -1901,8 +2269,8 @@
         "file": "./ContentStore.sol",
         "id": 2,
         "nodeType": "ImportDirective",
-        "scope": 139,
-        "sourceUnit": 220,
+        "scope": 166,
+        "sourceUnit": 247,
         "src": "25:28:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1913,9 +2281,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 138,
+        "id": 165,
         "linearizedBaseContracts": [
-          138
+          165
         ],
         "name": "ContentLocator",
         "nodeType": "ContractDefinition",
@@ -1925,7 +2293,7 @@
             "id": 7,
             "name": "locator",
             "nodeType": "VariableDeclaration",
-            "scope": 138,
+            "scope": 165,
             "src": "85:45:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1980,7 +2348,7 @@
             "id": 10,
             "name": "locations",
             "nodeType": "VariableDeclaration",
-            "scope": 138,
+            "scope": 165,
             "src": "137:27:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -2514,7 +2882,7 @@
               ],
               "src": "244:6:0"
             },
-            "scope": 138,
+            "scope": 165,
             "src": "171:323:0",
             "stateMutability": "payable",
             "superFunction": null,
@@ -2921,7 +3289,7 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 646,
+                      "referencedDeclaration": 673,
                       "src": "918:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -3053,7 +3421,7 @@
                             "stateVariable": false,
                             "storageLocation": "default",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_ContentStore_$219",
+                              "typeIdentifier": "t_contract$_ContentStore_$246",
                               "typeString": "contract ContentStore"
                             },
                             "typeName": {
@@ -3061,10 +3429,10 @@
                               "id": 102,
                               "name": "ContentStore",
                               "nodeType": "UserDefinedTypeName",
-                              "referencedDeclaration": 219,
+                              "referencedDeclaration": 246,
                               "src": "1055:12:0",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_ContentStore_$219",
+                                "typeIdentifier": "t_contract$_ContentStore_$246",
                                 "typeString": "contract ContentStore"
                               }
                             },
@@ -3128,10 +3496,10 @@
                             "name": "ContentStore",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 219,
+                            "referencedDeclaration": 246,
                             "src": "1076:12:0",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_ContentStore_$219_$",
+                              "typeIdentifier": "t_type$_t_contract$_ContentStore_$246_$",
                               "typeString": "type(contract ContentStore)"
                             }
                           },
@@ -3145,7 +3513,7 @@
                           "nodeType": "FunctionCall",
                           "src": "1076:24:0",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_contract$_ContentStore_$219",
+                            "typeIdentifier": "t_contract$_ContentStore_$246",
                             "typeString": "contract ContentStore"
                           }
                         },
@@ -3230,7 +3598,7 @@
                               "referencedDeclaration": 103,
                               "src": "1114:5:0",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_ContentStore_$219",
+                                "typeIdentifier": "t_contract$_ContentStore_$246",
                                 "typeString": "contract ContentStore"
                               }
                             },
@@ -3241,7 +3609,7 @@
                             "lValueRequested": false,
                             "memberName": "saveData",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 166,
+                            "referencedDeclaration": 193,
                             "src": "1114:14:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_external_payable$_t_address_$_t_bytes8_$returns$_t_bool_$",
@@ -3537,7 +3905,7 @@
               ],
               "src": "588:6:0"
             },
-            "scope": 138,
+            "scope": 165,
             "src": "500:684:0",
             "stateMutability": "payable",
             "superFunction": null,
@@ -3634,7 +4002,7 @@
               ],
               "src": "1239:6:0"
             },
-            "scope": 138,
+            "scope": 165,
             "src": "1191:95:0",
             "stateMutability": "view",
             "superFunction": null,
@@ -3642,13 +4010,358 @@
           },
           {
             "body": {
-              "id": 136,
+              "id": 159,
               "nodeType": "Block",
-              "src": "1318:8:0",
+              "src": "1370:120:0",
+              "statements": [
+                {
+                  "assignments": [
+                    143
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 143,
+                      "name": "store",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 160,
+                      "src": "1380:18:0",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ContentStore_$246",
+                        "typeString": "contract ContentStore"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 142,
+                        "name": "ContentStore",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 246,
+                        "src": "1380:12:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ContentStore_$246",
+                          "typeString": "contract ContentStore"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 149,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 145,
+                          "name": "locations",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10,
+                          "src": "1414:9:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                            "typeString": "address[] storage ref"
+                          }
+                        },
+                        "id": 147,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 146,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "1424:1:0",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "1414:12:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 144,
+                      "name": "ContentStore",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 246,
+                      "src": "1401:12:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_ContentStore_$246_$",
+                        "typeString": "type(contract ContentStore)"
+                      }
+                    },
+                    "id": 148,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1401:26:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ContentStore_$246",
+                      "typeString": "contract ContentStore"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1380:47:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 153,
+                        "name": "key",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 135,
+                        "src": "1451:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 154,
+                        "name": "value",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 137,
+                        "src": "1456:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 150,
+                        "name": "store",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 143,
+                        "src": "1437:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ContentStore_$246",
+                          "typeString": "contract ContentStore"
+                        }
+                      },
+                      "id": 152,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "setTest",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 229,
+                      "src": "1437:13:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_payable$_t_bytes32_$_t_bytes32_$returns$_t_bool_$",
+                        "typeString": "function (bytes32,bytes32) payable external returns (bool)"
+                      }
+                    },
+                    "id": 155,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1437:25:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 156,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1437:25:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 157,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1479:4:0",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 141,
+                  "id": 158,
+                  "nodeType": "Return",
+                  "src": "1472:11:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 160,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "setPassword",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 138,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 135,
+                  "name": "key",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 160,
+                  "src": "1313:11:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 134,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1313:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 137,
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 160,
+                  "src": "1326:13:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 136,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1326:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1312:28:0"
+            },
+            "payable": true,
+            "returnParameters": {
+              "id": 141,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 140,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 160,
+                  "src": "1364:4:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 139,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1364:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1363:6:0"
+            },
+            "scope": 165,
+            "src": "1292:198:0",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 163,
+              "nodeType": "Block",
+              "src": "1727:8:0",
               "statements": []
             },
             "documentation": null,
-            "id": 137,
+            "id": 164,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -3656,30 +4369,30 @@
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 134,
+              "id": 161,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1300:2:0"
+              "src": "1709:2:0"
             },
             "payable": true,
             "returnParameters": {
-              "id": 135,
+              "id": 162,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1318:0:0"
+              "src": "1727:0:0"
             },
-            "scope": 138,
-            "src": "1292:34:0",
+            "scope": 165,
+            "src": "1701:34:0",
             "stateMutability": "payable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 139,
-        "src": "55:1273:0"
+        "scope": 166,
+        "src": "55:1682:0"
       }
     ],
-    "src": "0:1503:0"
+    "src": "0:2028:0"
   },
   "compiler": {
     "name": "solc",
@@ -3689,16 +4402,16 @@
     "4447": {
       "events": {},
       "links": {},
-      "address": "0x2c2b9c9a4a25e24b174f26114e8926a9f2128fe4",
-      "transactionHash": "0x293a1768f6c693c7fff4dd061698c57b4778e28f31cf1cc1053be6e5e9e82288"
+      "address": "0xd54b47f8e6a1b97f3a84f63c867286272b273b7c",
+      "transactionHash": "0x56c5a4a40bccebf1486f05b4c579eeb4c2fb1f1db934de67f5129ea7e1e4774d"
     },
     "5777": {
       "events": {},
       "links": {},
       "address": "0x1828ce5cca2e2bb05463218a043fd00ef3a611d8",
-      "transactionHash": "0x293a1768f6c693c7fff4dd061698c57b4778e28f31cf1cc1053be6e5e9e82288"
+      "transactionHash": "0x3ef6f3d91477b3b0406502ebd4e04e21720327cc435d2cb8f600b535c5d365e2"
     }
   },
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-04-17T21:06:29.791Z"
+  "updatedAt": "2018-04-18T18:49:21.844Z"
 }
