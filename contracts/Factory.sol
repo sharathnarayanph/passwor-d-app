@@ -101,7 +101,3 @@ contract Factory is Killable {
 
     }
 }
-
-// contract ContentLocator {
-//     function shardContent(address user, bytes32 content) public returns (bool);
-// }

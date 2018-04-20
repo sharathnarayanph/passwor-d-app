@@ -3,7 +3,12 @@ pragma solidity ^0.4.2;
 import "./ContentStore.sol";
 
 contract ContentLocator {
-    mapping(address => address[]) private locator;
+    struct KeyAddress {
+        bytes32[] keys;
+        address[] keyLocations;
+    }
+
+    mapping(address => KeyAddress) private locator;
 
     address[] private locations;
 
@@ -22,30 +27,43 @@ contract ContentLocator {
         return true;
     }
 
-    function shardContent(address user, bytes32 content)
+    function shardContent(bytes32[] keys, bytes32[] values)
     public
     payable
     returns (bool) {
         //Shard the content to multiple smart contracts
+        
+        uint rand = 0;
 
-        bytes8[4] memory shards = [bytes8(0), 0, 0, 0];
-        assembly {
-            mstore(shards, content)
-            mstore(add(shards, 8), content)
-            mstore(add(shards, 16), content)
-            mstore(add(shards, 24), content)
-        }
+        for(uint i = 0; i < keys.length; i++) {
+            locator[msg.sender].keys.push(keys[i]);
+            locator[msg.sender].keyLocations.push(locations[rand]);
 
-        require(locator[user][0] != 0x0);
+            ContentStore store = ContentStore(locations[rand]);
+            store.saveData(msg.sender, keys[i], values[i]);
 
-        address[] memory targets = locator[user];
-
-        for (uint i = 0; i < 4; i++) {
-            ContentStore store = ContentStore(targets[i]);
-            store.saveData(user, shards[i]);
+            if(++rand >= locations.length) {
+                rand = 0;
+            }
         }
 
         return true;
+    }
+
+    function getData()
+    public
+    view
+    returns(bytes32[100] keys, bytes32[100] values) {
+        //Gather the shards and return content
+        
+        require(locator[msg.sender].keys.length != 0);
+
+        for(uint i = 0; i < locator[msg.sender].keys.length; i++) {
+            keys[i] = locator[msg.sender].keys[i];
+
+            ContentStore store = ContentStore(locator[msg.sender].keyLocations[i]);
+            values[i] = store.getData(msg.sender, keys[i]);
+        }
     }
 
 
@@ -53,26 +71,13 @@ contract ContentLocator {
         return locations.length;
     }
 
-    function setPassword(bytes32 key, bytes32 value) public payable returns(bool) {
-        ContentStore store = ContentStore(locations[0]);
-        store.setTest(key, value);
-        return true;
-    }
-
-    // function setPassword(int key) public payable returns(int) {
+    // function setPassword(bytes32 key, bytes32 value) public payable returns(bool) {
     //     ContentStore store = ContentStore(locations[0]);
-    //     //store.setTest(key);
-    //     return store.getTest();
+    //     store.setTest(key, value);
+    //     return true;
     // }
 
     function() public payable {
 
     }
 }
-
-// contract IContentStore {
-//     function saveData(address user, bytes8 shard) public returns(bool);
-//     function getData(address user) public view returns(bytes8);
-//     function setTest(int key) public payable returns(bool);
-//     function getTest() public view returns(int);
-// }
