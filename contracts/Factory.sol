@@ -77,12 +77,12 @@ contract Factory is Killable {
         return (users[msg.sender].name);
     }
 
-    function savePassword(bytes32 password) 
+    function savePassword(bytes32[100] keys, bytes32[100] values) 
     public
     onlyExistingUser 
     returns (bool) {
         ContentLocator locator = ContentLocator(users[msg.sender].location);
-        locator.shardContent(msg.sender, password);
+        locator.shardContent(keys, values);
         return true;
     }
 

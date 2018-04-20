@@ -27,7 +27,7 @@ contract ContentLocator {
         return true;
     }
 
-    function shardContent(bytes32[] keys, bytes32[] values)
+    function shardContent(bytes32[100] keys, bytes32[100] values)
     public
     payable
     returns (bool) {
@@ -52,13 +52,13 @@ contract ContentLocator {
 
     function getData()
     public
-    view
+    payable
     returns(bytes32[100] keys, bytes32[100] values) {
         //Gather the shards and return content
         
         require(locator[msg.sender].keys.length != 0);
 
-        for(uint i = 0; i < locator[msg.sender].keys.length; i++) {
+        for(uint i = 0; i < 3; i++) {
             keys[i] = locator[msg.sender].keys[i];
 
             ContentStore store = ContentStore(locator[msg.sender].keyLocations[i]);
@@ -71,11 +71,10 @@ contract ContentLocator {
         return locations.length;
     }
 
-    // function setPassword(bytes32 key, bytes32 value) public payable returns(bool) {
-    //     ContentStore store = ContentStore(locations[0]);
-    //     store.setTest(key, value);
-    //     return true;
-    // }
+    //Test
+    function getLocatorLength() public view returns(uint) {
+        return locator[msg.sender].keys.length;
+    }
 
     function() public payable {
 

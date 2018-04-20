@@ -140,8 +140,74 @@ export function setLocatorTest() {
 
 export function getStoreTest() {
     var instance = createContractInstance();
-    var key = "Sharath";
+    var key = "Vegeta";
     instance.getTest.call(key,function(error,result) {
+        if(!error) {
+            console.log(result);
+        }
+        else {
+            console.log('Error');
+        }
+    });
+}
+
+export function locatorShardContent() {
+    var instance = createContractInstance();
+    var keys = ["Vegeta", "Piccolo", "Trunks"];
+    var values = ["Password1", "Password2", "Password3"];
+    var estimatedGas = 6654755;
+
+    var txnObject = {
+        from: web3.eth.coinbase,
+        gas: estimatedGas
+    }
+
+    instance.shardContent.sendTransaction(keys, values, txnObject, function(error, result) {
+        if(!error) {
+            console.warn(result);
+        }
+        else {
+            console.log("Error");
+        }
+    });
+}
+
+export function storeGetData() {
+    var instance = createContractInstance();
+    var key = "Vegeta";
+    instance.getData.call(web3.eth.coinbase, key,function(error,result) {
+        if(!error) {
+            console.log(result);
+        }
+        else {
+            console.log('Error');
+        }
+    });
+}
+
+export function locatorGetData() {
+    var instance = createContractInstance();
+    var estimatedGas = 6654755;
+
+    // var txnObject = {
+    //     from: web3.eth.coinbase,
+    //     gas: estimatedGas
+    // }
+
+    instance.getData.call(function(error,result) {
+        if(!error) {
+            console.log(result);
+        }
+        else {
+            console.log('Error');
+        }
+    });
+}
+
+export function getLocatorUserKeyLength() {
+    var instance = createContractInstance();
+
+    instance.getLocatorLength.call(function(error,result) {
         if(!error) {
             console.log(result);
         }

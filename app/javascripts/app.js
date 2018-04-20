@@ -13,7 +13,6 @@ window.App = {
 
 window.Admin = {
   deployContract: function() {
-    //Base Code
     admin.deployContract();
   },
   addLocatorLocations: function() {
@@ -29,7 +28,6 @@ window.Admin = {
     admin.shardData();
   },
   testFunction: function() {
-    //console.log(web3.toAscii('0x50617373776f7264000000000000000000000000000000000000000000000000'));
     admin.setPassword();
   },
   setLocatorTest: function() {
@@ -37,6 +35,18 @@ window.Admin = {
   },
   getStoreTest: function() {
     admin.getStoreTest();
+  },
+  locatorShardContent: function() {
+    admin.locatorShardContent();
+  },
+  storeGetData: function() {
+    admin.storeGetData();
+  },
+  locatorGetData: function() {
+    admin.locatorGetData();
+  },
+  getLocatorUserKeyLength: function() {
+    admin.getLocatorUserKeyLength();
   }
 };
 
