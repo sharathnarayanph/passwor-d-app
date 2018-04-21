@@ -6,6 +6,7 @@ contract ContentLocator {
     struct KeyAddress {
         bytes32[] keys;
         address[] keyLocations;
+        uint keyCount;
     }
 
     mapping(address => KeyAddress) private locator;
@@ -27,7 +28,7 @@ contract ContentLocator {
         return true;
     }
 
-    function shardContent(bytes32[100] keys, bytes32[100] values)
+    function shardContent(bytes32[1000] keys, bytes32[1000] values, uint keyCount)
     public
     payable
     returns (bool) {
@@ -35,7 +36,9 @@ contract ContentLocator {
         
         uint rand = 0;
 
-        for(uint i = 0; i < keys.length; i++) {
+        locator[msg.sender].keyCount = keyCount;
+
+        for(uint i = 0; i < keyCount; i++) {
             locator[msg.sender].keys.push(keys[i]);
             locator[msg.sender].keyLocations.push(locations[rand]);
 
@@ -53,12 +56,14 @@ contract ContentLocator {
     function getData()
     public
     payable
-    returns(bytes32[100] keys, bytes32[100] values) {
+    returns(bytes32[1000] keys, bytes32[1000] values, uint keyCount) {
         //Gather the shards and return content
         
-        require(locator[msg.sender].keys.length != 0);
+        require(locator[msg.sender].keyCount != 0);
 
-        for(uint i = 0; i < 3; i++) {
+        keyCount = locator[msg.sender].keyCount;
+
+        for(uint i = 0; i < locator[msg.sender].keyCount; i++) {
             keys[i] = locator[msg.sender].keys[i];
 
             ContentStore store = ContentStore(locator[msg.sender].keyLocations[i]);

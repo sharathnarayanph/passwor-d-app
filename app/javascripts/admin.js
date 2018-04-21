@@ -155,6 +155,7 @@ export function locatorShardContent() {
     var instance = createContractInstance();
     var keys = ["Vegeta", "Piccolo", "Trunks"];
     var values = ["Password1", "Password2", "Password3"];
+    var length = 3;
     var estimatedGas = 6654755;
 
     var txnObject = {
@@ -162,7 +163,7 @@ export function locatorShardContent() {
         gas: estimatedGas
     }
 
-    instance.shardContent.sendTransaction(keys, values, txnObject, function(error, result) {
+    instance.shardContent.sendTransaction(keys, values, length, txnObject, function(error, result) {
         if(!error) {
             console.warn(result);
         }
