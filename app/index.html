@@ -20,18 +20,18 @@
 
   <!-- Main -->
   <section id="main" class="wrapper">
-    <div class="login inner">
+    <div class="dapp inner">
       <header class="align-center">
         <h2>Passwor-D-App</h2>
         <p>Decentralize your password vault</p>
       </header>
-      <div id="signin">
+      <div id="signin" style="display: none">
         <div>
-          <input type="text" name="account" id="acctId" value="" placeholder="Account" />
+          <input type="text" name="signin-account" id="signInAcctId" value="" placeholder="Account" />
         </div>
         <br />
         <div>
-          <input type="password" name="password" id="password" value="" placeholder="Password" />
+          <input type="password" name="signin-password" id="signInPwd" value="" placeholder="Password" />
         </div>
         <br />
         <div>
@@ -39,8 +39,71 @@
             <li>
               <input type="submit" value="Sign In" />
             </li>
+            <li>
+              <input type="button" value="Sign Up" />
+            </li>
           </ul>
         </div>
+      </div>
+      <div id="signup" style="display: none">
+        <div>
+          <input type="text" name="signup-name" id="signUpName" value="" placeholder="Name" />
+        </div>
+        <br/>
+        <div>
+          <input type="text" name="signup-email" id="signUpEmail" value="" placeholder="Email" />
+        </div>
+        <br/>
+        <div>
+          <input type="text" name="signup-password" id="signUpPwd" value="" placeholder="Password" />
+        </div>
+        <br/>
+        <div>
+          <ul class="actions">
+            <li>
+              <input type="submit" value="Sign Up" />
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="passwordlist">
+        <div class="table-wrapper">
+          <table id="pwdListTbl" class="alt">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Account</th>
+                <th>Password</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>
+                  <input type="text" name="user-acct-name" id="userAcctName" value="Google" placeholder="Enter Account Name" />
+                </td>
+                <td>
+                  <input type="text" name="user-password" id="userPwd" value="Google@123" placeholder="Enter Password" />
+                </td>
+                <td><a onclick="" class="fa fa-close" href="#"></a></td>
+              </tr>
+            </tbody>
+            <!-- <tfoot>
+                  <tr>
+                    <td colspan="2"></td>
+                    <td>100.00</td>
+                  </tr>
+                </tfoot> -->
+          </table>
+        </div>
+        <ul class="actions">
+          <li>
+            <a id="savePwds" onclick="" class="button">Save</a>
+          </li>
+          <li>
+            <a onclick="App.addRow()" class="button">Add</a>
+          </li>
+        </ul>
       </div>
     </div>
   </section>

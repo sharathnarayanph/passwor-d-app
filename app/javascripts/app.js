@@ -4,10 +4,14 @@ import { default as Web3} from 'web3';
 import { default as contract } from 'truffle-contract';
 import * as helper from './helper.js';
 import * as admin from './admin.js';
+import * as dapp from './dapp.js';
 
 window.App = {
   start: function() {
     //Base Code
+  },
+  addRow: function() {
+    dapp.addRow();
   }
 };
 
