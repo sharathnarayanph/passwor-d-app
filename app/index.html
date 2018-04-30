@@ -67,7 +67,7 @@
         </div>
       </div>
       <div id="passwordlist">
-        <div class="table-wrapper">
+        <div id="pwdTblContainer" class="table-wrapper">
           <table id="pwdListTbl" class="alt">
             <thead>
               <tr>
@@ -77,40 +77,23 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>
-                  <input type="text" name="user-acct-name" id="userAcctName" value="Google" placeholder="Enter Account Name" />
-                </td>
-                <td>
-                  <input type="text" name="user-password" id="userPwd" value="Google@123" placeholder="Enter Password" />
-                </td>
-                <td><a onclick="" class="fa fa-close" href="#"></a></td>
-              </tr>
             </tbody>
-            <!-- <tfoot>
-                  <tr>
-                    <td colspan="2"></td>
-                    <td>100.00</td>
-                  </tr>
-                </tfoot> -->
           </table>
         </div>
-        <ul class="actions">
-          <li>
-            <a id="savePwds" onclick="" class="button">Save</a>
-          </li>
-          <li>
-            <a onclick="App.addRow()" class="button">Add</a>
-          </li>
-        </ul>
+        <div id="noPwds" class="align-center">There are no saved passwords!</div>
+        <div>
+          <ul class="actions">
+            <li>
+              <a id="savePwds" onclick="App.save()" class="button">Save</a>
+            </li>
+            <li>
+              <a onclick="App.addRow()" class="button">Add</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
-
-  <!-- Footer -->
-  <!-- <footer id="footer">
-  </footer> -->
 </body>
 
 </html>

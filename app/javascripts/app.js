@@ -9,9 +9,16 @@ import * as dapp from './dapp.js';
 window.App = {
   start: function() {
     //Base Code
+    dapp.initApp();
   },
   addRow: function() {
     dapp.addRow();
+  },
+  removeRow: function(row) {
+    dapp.removeRow(row);
+  },
+  save: function() {
+    dapp.save();
   }
 };
 
