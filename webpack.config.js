@@ -4,8 +4,7 @@ const webpack = require("webpack");
 
 module.exports = {
   entry: {
-    'app':'./app/javascripts/app.js',
-    'factory':'./app/res/factory.js'
+    'app':'./app/javascripts/app.js'
   },
   output: {
     path: path.resolve(__dirname, 'build'),
