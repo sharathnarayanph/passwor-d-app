@@ -6,6 +6,10 @@ export function initApp() {
     hideList();
 }
 
+export function login() {
+    //Start from here
+}
+
 export function addRow() {
     showList();
 

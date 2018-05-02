@@ -73,6 +73,7 @@ contract Factory is Killable {
     function login(bytes32 password) constant
     public
     returns (bytes32) {
+        require(users[msg.sender].password == password);
 
         return (users[msg.sender].name);
     }
@@ -84,6 +85,16 @@ contract Factory is Killable {
         ContentLocator locator = ContentLocator(users[msg.sender].location);
         locator.shardContent(keys, values, keyCount);
         return true;
+    }
+
+    function getPassword()
+    public
+    payable
+    returns(bytes32[1000] keys, bytes32[1000] values, uint keyCount) {
+        //Communicate with contract to get passwords
+
+        ContentLocator locator = ContentLocator(users[msg.sender].location);
+        (keys, values, keyCount) = locator.getData();
     }
 
     function addLocations(address[] locs) public {
