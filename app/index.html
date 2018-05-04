@@ -25,7 +25,7 @@
         <h2>Passwor-D-App</h2>
         <p>Decentralize your password vault</p>
       </header>
-      <div id="signin" style="display: none">
+      <div id="signIn" style="display: none">
         <div>
           <input type="text" name="signin-account" id="signInAcctId" value="" placeholder="Account" />
         </div>
@@ -37,15 +37,15 @@
         <div>
           <ul class="actions">
             <li>
-              <input type="submit" value="Sign In" />
+              <input type="submit" onclick="App.login()" value="Sign In" />
             </li>
             <li>
-              <input type="button" value="Sign Up" />
+              <input type="button" onclick="App.showSignUp()" value="Sign Up" />
             </li>
           </ul>
         </div>
       </div>
-      <div id="signup" style="display: none">
+      <div id="signUp" style="display: none">
         <div>
           <input type="text" name="signup-name" id="signUpName" value="" placeholder="Name" />
         </div>
@@ -61,12 +61,15 @@
         <div>
           <ul class="actions">
             <li>
-              <input type="submit" value="Sign Up" />
+              <input type="submit" onclick="App.signUp()" value="Sign Up" />
+            </li>
+            <li>
+              <input type="submit" onclick="App.showSignIn()" value="Back" />
             </li>
           </ul>
         </div>
       </div>
-      <div id="passwordlist">
+      <div id="passwordList">
         <div id="pwdTblContainer" class="table-wrapper">
           <table id="pwdListTbl" class="alt">
             <thead>

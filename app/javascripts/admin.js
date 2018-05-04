@@ -190,11 +190,6 @@ export function locatorGetData() {
     var instance = createContractInstance();
     var estimatedGas = 6654755;
 
-    // var txnObject = {
-    //     from: web3.eth.coinbase,
-    //     gas: estimatedGas
-    // }
-
     instance.getData.call(function(error,result) {
         if(!error) {
             console.log(result);

@@ -8,8 +8,19 @@ import * as dapp from './dapp.js';
 
 window.App = {
   start: function() {
-    //Base Code
     dapp.initApp();
+  },
+  login: function() {
+    dapp.login();
+  },
+  showSignIn: function() {
+    dapp.showSignIn();
+  },
+  showSignUp: function() {
+    dapp.showSignUp();
+  },
+  signUp: function() {
+    dapp.signUp();
   },
   addRow: function() {
     dapp.addRow();

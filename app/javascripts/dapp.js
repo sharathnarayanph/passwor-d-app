@@ -1,13 +1,58 @@
 import * as helper from './helper.js';
-import $ from 'jquery';
 import factory from '../res/factory.js';
+import $ from 'jquery';
 
 export function initApp() {
-    hideList();
+    showSignIn();
 }
 
 export function login() {
-    //Start from here
+    var instance = createContractInstance();
+    var password = $("#signInPwd")[0].value;
+
+    instance.login.call(password, function(error,result) {
+        if(!error) {
+            loadPasswords();
+        }
+        else {
+            console.log('Error');
+        }
+    });
+}
+
+export function showSignUp() {
+    $("#signIn").hide();
+    $("#signUp").show();
+}
+
+export function showSignIn() {
+    $("#signIn").show();
+    $("#signUp").hide();
+    $("#passwordList").hide();
+}
+
+export function signUp() {
+    var name = $("#signUpName")[0].value;
+    var email = $("#signUpEmail")[0].value;
+    var password = $("#signUpPwd")[0].value;
+    var estimatedGas = 6654755;
+
+    var instance = createContractInstance();
+
+    var txnObject = {
+        from: web3.eth.coinbase,
+        gas: estimatedGas
+    }
+
+    instance.signUp.sendTransaction(name, email, password, txnObject, function(error, result) {
+        if(!error) {
+            loadPasswords(1);
+        }
+        else {
+            console.log("Error");
+        }
+    });
+
 }
 
 export function addRow() {
@@ -60,8 +105,18 @@ export function save() {
     savePasswords(keys, values);
 }
 
-export function loadPasswords() {
-    getPasswordList();
+export function loadPasswords(isNew = 0) {
+    $("#signIn").hide();
+    $("#signUp").hide();
+    $("#passwordList").show();
+
+    if(!isNew) {
+        showList();
+        getPasswordList();
+    }
+    else {
+        hideList();
+    }
 }
 
 function showList() {
@@ -77,7 +132,7 @@ function hideList() {
 }
 
 function createContractInstance() {
-    return helper.createContractInstance(factory.abi, factory, address);
+    return helper.createContractInstance(JSON.stringify(factory.abi), factory.address);
 }
 
 function savePasswords(keys, values) {
@@ -105,8 +160,7 @@ function getPasswordList() {
 
     instance.getPassword.call(function (error, result) {
         if (!error) {
-            console.log(result)
-            showList();
+            console.log(result);
             generatePasswordList(result[0], result[1]);
         }
         else {

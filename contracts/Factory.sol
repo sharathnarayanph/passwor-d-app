@@ -97,7 +97,10 @@ contract Factory is Killable {
         (keys, values, keyCount) = locator.getData();
     }
 
-    function addLocations(address[] locs) public {
+    function addLocations(address[] locs)
+    public 
+    payable
+    returns(bool) {
         //Copy the input ContentStores to the locations list
 
         for (uint i = 0; i < locs.length; i++) {
@@ -105,6 +108,8 @@ contract Factory is Killable {
                 locations.push(locs[i]);
             }
         }
+
+        return true;
     }
 
     //Fallback function for loading with ether
