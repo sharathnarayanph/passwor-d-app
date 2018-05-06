@@ -4,6 +4,15 @@ import $ from 'jquery';
 
 export function initApp() {
     showSignIn();
+
+    //Setup account number
+    $("#signInAcctId").attr("disabled", "disabled");
+    if(web3 == undefined || !web3.eth.accounts.length) {
+        $("#signInAcctId").val("Please enable Metamask");
+    }
+    else {
+        $("#signInAcctId").val(web3.eth.coinbase);
+    }
 }
 
 export function login() {
@@ -12,10 +21,11 @@ export function login() {
 
     instance.login.call(password, function(error,result) {
         if(!error) {
+            $("#userHeader").text(result);
             loadPasswords();
         }
         else {
-            console.log('Error');
+            console.log("Error");
         }
     });
 }
@@ -160,20 +170,42 @@ function getPasswordList() {
 
     instance.getPassword.call(function (error, result) {
         if (!error) {
-            console.log(result);
-            generatePasswordList(result[0], result[1]);
+            if(result[2] == 0) {
+                hideList();
+            }
+            else {
+                //generatePasswordList(result[0], result[1], result[2]);
+                configureList(result[0],result[1],result[2]);
+            }
         }
         else {
-            console.log('Error');
+            console.log("Error");
         }
     });
 }
 
-function generatePasswordList(keys, values) {
+function configureList(keys, values, length) {
+    length = web3.toDecimal(web3.toHex(length));
+
+    var regEx = /[0]+$/;
+    var currKey, currValue;
+
+    for(var i = 0; i < length; i++) {
+        currKey = keys[i].replace(regEx, "");
+        currValue = values[i].replace(regEx, "");
+        
+        keys[i] = web3.toAscii(currKey);
+        values[i] = web3.toAscii(currValue);
+    }
+
+    generatePasswordList(keys, values, length);
+}
+
+function generatePasswordList(keys, values, length) {
     var content;
     var element;
 
-    for (var i = 0; i < keys.length; i++) {
+    for (var i = 0; i < length; i++) {
         content = "<tr><td>" + (parseInt(i) + 1) + "</td>";
         content += "<td><input type=\"text\"";
         content += "value=\"" + keys[i] + "\" placeholder=\"Enter Account Name\" /></td>";
