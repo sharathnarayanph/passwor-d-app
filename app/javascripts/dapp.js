@@ -21,6 +21,10 @@ export function login() {
 
     instance.login.call(password, function(error,result) {
         if(!error) {
+            var regEx = /[0]+$/;
+            result = result.replace(regEx, "");       
+            result = web3.toAscii(result);
+
             $("#userHeader").text(result);
             loadPasswords();
         }
